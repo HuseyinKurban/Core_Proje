@@ -8,5 +8,15 @@ namespace Core_Proje.WebUI.Controllers
         {
             return View();
         }
+
+        public PartialViewResult HeaderPartial()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult NavBarPartial()
+        {
+            return PartialView();
+        }
     }
 }
