@@ -26,16 +26,17 @@ namespace Core_Proje.WebUI.Controllers
         {
             return PartialView();
         }
+
         [HttpPost]
-        public PartialViewResult SendMessage(Message p)
+        public IActionResult SendMessage(Message p)
         {
             MessageManager _messageManager = new MessageManager(new EfMessageDal());
 
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             p.Status = true;
             _messageManager.TAdd(p);
-           
-            return PartialView();
+
+            return RedirectToAction("Index", "Default");
         }
     }
 }
