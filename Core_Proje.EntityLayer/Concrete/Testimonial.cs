@@ -18,5 +18,7 @@ namespace Core_Proje.EntityLayer.Concrete
 
         public string ImageUrl { get; set; }
 
+        public string Title { get; set; }
+
     }
 }
