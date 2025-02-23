@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Core_Proje.BusinessLayer.Concrete;
+using Core_Proje.DataAccessLayer.EntityFramework;
+using Core_Proje.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.WebUI.Controllers
 {
@@ -16,6 +19,22 @@ namespace Core_Proje.WebUI.Controllers
 
         public PartialViewResult NavBarPartial()
         {
+            return PartialView();
+        }
+        [HttpGet]
+        public PartialViewResult SendMessage()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult SendMessage(Message p)
+        {
+            MessageManager _messageManager = new MessageManager(new EfMessageDal());
+
+            p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            p.Status = true;
+            _messageManager.TAdd(p);
+           
             return PartialView();
         }
     }
