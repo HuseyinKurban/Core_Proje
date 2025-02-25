@@ -38,5 +38,7 @@ namespace Core_Proje.WebUI.Controllers
 
             return RedirectToAction("Index", "Default");
         }
+
+        
     }
 }
