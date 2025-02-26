@@ -1,0 +1,23 @@
+﻿@model Skill
+@{
+    ViewData["Title"] = "UpdateSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card">
+
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" asp-for="SkillId" />
+            <label>Yetenek Başlığı</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <br />
+            <label>Değer</label>
+            <input type="text" asp-for="Value" class="form-control" />
+            <br />
+            <button class="btn btn-warning">Kaydet</button>
+        </form>
+    </div>
+</div>
