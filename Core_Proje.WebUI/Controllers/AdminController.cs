@@ -18,5 +18,20 @@ namespace Core_Proje.WebUI.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult PartialNavBar()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialHead()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialHeader()
+        {
+            return PartialView();
+        }
     }
 }
