@@ -42,5 +42,10 @@ namespace Core_Proje.BusinessLayer.Concrete
         {
            _skillDal.Update(entity);
         }
+
+        public void TUpdate(Feature p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
