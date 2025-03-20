@@ -1,0 +1,38 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" asp-for="AboutId" />
+            <label>Başlık</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <br />
+            <label>Açıklama</label>
+            <textarea asp-for="Description" class="form-control" rows="4" style="max-width:auto;max-height:300px" ></textarea>
+            <br />
+            <label>Yaş</label>
+            <input type="text" asp-for="Age" class="form-control" />
+            <br />
+            <label>Mail</label>
+            <input type="text" asp-for="Mail" class="form-control" />
+            <br />
+            <label>Telefon</label>
+            <input type="text" asp-for="Phone" class="form-control" />
+            <br />
+            <label>Adres</label>
+            <input type="text" asp-for="Address" class="form-control" />
+            <br />
+            <label>Görsel</label>
+            <input type="text" asp-for="ImageUrl" class="form-control" />
+            <br />
+            <button class="btn btn-warning">Kaydet</button>
+        </form>
+    </div>
+</div>
+
+
