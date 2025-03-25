@@ -1,5 +1,6 @@
 ﻿using Core_Proje.EntityLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,14 @@ namespace Core_Proje.DataAccessLayer.Concrete
 {
     public class Context : DbContext
     {
+        readonly ILoggerFactory MyLoggerFactory
+            = LoggerFactory.Create(builder => builder.AddConsole());
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=DESKTOP-32Q9FH5;initial catalog=CoreProjeDb;integrated security=true;TrustServerCertificate=true");
+
+            optionsBuilder.UseLoggerFactory(MyLoggerFactory);
+
         }
 
         public DbSet<About> Abouts { get; set; }

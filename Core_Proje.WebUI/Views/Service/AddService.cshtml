@@ -1,0 +1,20 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+
+    <div class="card-body">
+        <form method="post">
+            <label>Hizmet Başlığı</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <br />
+            <label>Hizmet Görseli</label>
+            <input type="text" asp-for="ImageUrl" class="form-control" />
+            <br />
+            <button class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+</div>
