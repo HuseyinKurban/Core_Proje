@@ -1,0 +1,66 @@
+﻿@model List<Service>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<div class="row">
+    <div class="col">
+        <div class="card bg-default shadow">
+            <div class="card-header bg-transparent border-0">
+                <h3 class="text-white mb-0">Hizmet Listesi</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center table-dark table-flush">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="sort" data-sort="name">#</th>
+                            <th scope="col" class="sort" data-sort="budget">Başlık</th>
+                            <th scope="col">Sil</th>
+                            <th scope="col" class="sort" data-sort="completion">Düzenle</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="list">
+                        @foreach (var item in Model)
+                        {
+                            sayac++;
+                            <tr>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <span class="name mb-0 text-sm">@sayac</span>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td class="budget">
+                                    @item.Title
+                                </td>
+
+                                <td>
+                                    <div class="avatar-group">
+
+                                        <a href="/Service/DeleteService/@item.ServiceId" class="btn btn-danger">Sil</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="avatar-group">
+
+                                        <a href="/Service/UpdateService/@item.ServiceId" class="btn btn-info">Güncelle</a>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+        <a href="/Service/AddService" class="btn btn-primary">Yeni Hizmet Ekle</a>
+    </div>
+</div>
