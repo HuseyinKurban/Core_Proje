@@ -1,28 +1,35 @@
 ﻿@model Experience
 @{
     ViewData["Title"] = "UpdateExperience";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description">Deneyim Düzenleme Paneli</p>
+            <form class="forms-sample" method="post">
 
-    <div class="card-body">
-        <form method="post">
-            <input type="hidden" asp-for="ExperienceId" />
-            <label>Deneyim Başlığı</label>
-            <input type="text" asp-for="Name" class="form-control" />
-            <br />
-            <label>Tarih Aralığı</label>
-            <input type="text" asp-for="Date" class="form-control" />
-            <br />
-            <label>Image Url</label>
-            <input type="text" asp-for="ImageUrl" class="form-control" />
-            <br />
-            <label>Açıklama</label>
-            <input type="text" asp-for="Description" class="form-control" />
-            <br />
-            <button class="btn btn-primary">Kaydet</button>
-        </form>
+                <input type="hidden" class="form-control" asp-for="ExperienceId">
+
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" class="form-control" asp-for="Name">
+                </div>
+                <div class="form-group">
+                    <label>Tarih</label>
+                    <input type="text" class="form-control" asp-for="Date">
+                </div>
+                <div class="form-group">
+                    <label>Görsel Url</label>
+                    <input type="text" class="form-control" asp-for="ImageUrl">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" asp-for="Description" rows="6"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            </form>
+        </div>
     </div>
 </div>
-
