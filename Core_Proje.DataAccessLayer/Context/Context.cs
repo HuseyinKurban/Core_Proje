@@ -11,13 +11,13 @@ namespace Core_Proje.DataAccessLayer.Concrete
 {
     public class Context : DbContext
     {
-        readonly ILoggerFactory MyLoggerFactory
-            = LoggerFactory.Create(builder => builder.AddConsole());
+        //readonly ILoggerFactory MyLoggerFactory
+        //    = LoggerFactory.Create(builder => builder.AddConsole());
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=DESKTOP-32Q9FH5;initial catalog=CoreProjeDb;integrated security=true;TrustServerCertificate=true");
 
-            optionsBuilder.UseLoggerFactory(MyLoggerFactory);
+            //optionsBuilder.UseLoggerFactory(MyLoggerFactory);
 
         }
 
