@@ -33,5 +33,10 @@ namespace Core_Proje.WebUI.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult NewSidebar()
+        {
+            return PartialView();
+        }
     }
 }
