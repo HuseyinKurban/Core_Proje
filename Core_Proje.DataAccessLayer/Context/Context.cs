@@ -11,11 +11,11 @@ namespace Core_Proje.DataAccessLayer.Concrete
 {
     public class Context : DbContext
     {
-        //readonly ILoggerFactory MyLoggerFactory
-        //    = LoggerFactory.Create(builder => builder.AddConsole());
+    //    readonly ILoggerFactory MyLoggerFactory
+    //       = LoggerFactory.Create(builder => builder.AddConsole());
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-32Q9FH5;initial catalog=CoreProjeDb;integrated security=true;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("Server=EIX-AR-08;initial catalog=CoreProjeDb;integrated security=true;TrustServerCertificate=true");
 
             //optionsBuilder.UseLoggerFactory(MyLoggerFactory);
 
@@ -31,5 +31,8 @@ namespace Core_Proje.DataAccessLayer.Concrete
         public DbSet<Skill> Skills { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserMessage> UserMessages { get; set; }
+        public DbSet<ToDoList> ToDoLists { get; set; }
     }
 }

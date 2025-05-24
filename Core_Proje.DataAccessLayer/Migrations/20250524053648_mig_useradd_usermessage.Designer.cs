@@ -4,6 +4,7 @@ using Core_Proje.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Core_Proje.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20250524053648_mig_useradd_usermessage")]
+    partial class mig_useradd_usermessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -337,26 +339,6 @@ namespace Core_Proje.DataAccessLayer.Migrations
                     b.HasKey("TestimonialId");
 
                     b.ToTable("Testimonials");
-                });
-
-            modelBuilder.Entity("Core_Proje.EntityLayer.Concrete.ToDoList", b =>
-                {
-                    b.Property<int>("ToDoListID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ToDoListID"), 1L, 1);
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("ToDoListID");
-
-                    b.ToTable("ToDoLists");
                 });
 
             modelBuilder.Entity("Core_Proje.EntityLayer.Concrete.User", b =>
